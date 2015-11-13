@@ -1,0 +1,19 @@
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+/bower_components/
+/node_modules/
+/bower_components/
+
+*.DS_Store
+*.swp
+.rvmrc
+.ruby-gemset
+.powrc
+.sass-cache/
+.tm_properties
+.env
+.naspi.yml
+.idea/
+*.sublime-*

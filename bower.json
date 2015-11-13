@@ -1,0 +1,13 @@
+{
+  "name": "hidmx",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
+  "main": [],
+  "ignore": [],
+  "dependencies": {
+    "mdi": ">=1.2.65",
+    "roboto-fontface": ">=0.4.3"
+  }
+}
+
