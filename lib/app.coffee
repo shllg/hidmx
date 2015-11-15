@@ -1,6 +1,9 @@
 app           = require('app')              # Module to control application life.
 BrowserWindow = require('browser-window')   # Module to create native browser window.
 
+# compile
+require('electron-compile').init();
+
 # Report crashes to our server.
 require('crash-reporter').start()
 
