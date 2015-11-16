@@ -12,15 +12,26 @@ fs = require('fs')
 global.tpl = (dirname, relPath) ->
   jadeContent = fs.readFileSync(path.join(dirname, relPath), { encoding: 'utf8' })
   fn = jade.compile(jadeContent)
+  _.template(fn())
 
 require './libs'
+
+_.templateSettings = {
+  interpolate: /\{\{=(.+?)\}\}/g,
+  evaluate: /\{\{(.+?)\}\}/g,
+}
+
 
 sass = require('node-sass')
 style = sass.render({
   file: path.join(__dirname, '../stylesheets/main.sass')
+  includePaths: [
+    'bower_components/bourbon/app/assets/stylesheets'
+  ]
 }, (err, result) =>
   jQuery('head').append("<style media='all' rel='stylesheet'>#{result.css.toString()}</style>")
 )
+
 
 
 
@@ -33,10 +44,29 @@ SohLedBar24ChDevice = require('./devices/soh_led_bar_24_ch/device')
 led = new SohLedBar24ChDevice()
 
 ledSimulatorView = led.getSimulatorView()
-
 ledSimulatorView.render()
 
+ledControlView = led.getControlView()
+ledControlView.render()
+
 $('body').append(ledSimulatorView.$el)
+$('body').append(ledControlView.$el)
+
+
+FaderControl      = require('./controls/fader/models/fader')
+FaderControlView  = require('./controls/fader/views/item_view')
+view = new FaderControlView({ model: new FaderControl() })
+view.render()
+$('body').append(view.$el)
+
+
+# 60fps = 17 ms
+# 10fps = 100 ms
+
+# setInterval =>
+#   ledSimulatorView.render()
+# , 100
+
 
 # global.artnet = require('artnet')({ host: '200.78.78.28' })
 

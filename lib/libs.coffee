@@ -23,6 +23,9 @@ global.backbone.radio = require '../node_modules/backbone.radio'
 require '../node_modules/backbone.babysitter'
 require '../node_modules/backbone-relational'
 
+# interacts.js
+global.interact = require '../node_modules/interact.js'
+
 # backbone radio shim
 Marionette.Application.prototype._initChannel = ->
   @channelName  = _.result(@, 'channelName') || 'global'

@@ -1,0 +1,35 @@
+$controls-fader-height: 200px
+
+$controls-fader-slider-width: 33px
+$controls-fader-slider-height: 55px
+
+.controls-fader
+  position: relative
+  display: inline-block
+  width: 50px
+  height: $controls-fader-height
+  border: 1px solid #ff0000
+  .controls-fader-slot
+    +position(absolute, ($controls-fader-slider-height / 2) 0 0 ($controls-fader-slider-width / 2))
+    +border-top-radius(1px)
+    +border-bottom-radius(1px)
+    position: absolute
+    overflow: visible
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1)
+    width: 3px
+    height: $controls-fader-height - $controls-fader-slider-height
+    background-color: #000
+  .controls-fader-valve
+    +position(absolute, 100% auto auto (-0.5 * $controls-fader-slider-width + 2))
+    overflow: visible
+    width: $controls-fader-slider-width
+    height: 1px
+  .controls-fader-valve-inner
+    +position(absolute, (-0.5 * $controls-fader-slider-height) auto auto auto)
+    +border-top-radius(2px)
+    +border-bottom-radius(2px)
+    width: $controls-fader-slider-width
+    height: $controls-fader-slider-height
+    background-color: #999
+    box-sizing: border-box
+    cursor: pointer

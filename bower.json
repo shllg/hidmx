@@ -6,6 +6,7 @@
   "main": [],
   "ignore": [],
   "dependencies": {
+    "bourbon": "4.2.6",
     "mdi": ">=1.2.65",
     "roboto-fontface": ">=0.4.3"
   }

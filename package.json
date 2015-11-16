@@ -22,6 +22,7 @@
     "glob": "~5.0.14",
     "haml-coffee": "^1.14.1",
     "iconv-lite": "~0.4.11",
+    "interact.js": "^1.2.6",
     "jade": "^1.11.0",
     "jquery": ">=2.1.4",
     "jquery.serializeJSON": "https://github.com/marioizquierdo/jquery.serializeJSON.git#df3fb92",

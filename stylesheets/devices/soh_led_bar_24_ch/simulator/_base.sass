@@ -1,0 +1,37 @@
+$soh_led_bar_24_ch-width: 50px
+$soh_led_bar_24_ch-height: 20px
+$soh_led_bar_24_ch-border-color: lighten($background-color, 15%)
+
+.device-simulator.soh_led_bar_24_ch
+  display: inline-block
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  .device-name
+    color: lighten($soh_led_bar_24_ch-border-color, 15%)
+  .soh_led_bar_24_ch-inside
+    +clearfix
+    +border-top-radius(2px)
+    +border-bottom-radius(2px)
+    display: block
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    border: 2px solid $soh_led_bar_24_ch-border-color
+    outline: none
+    .led-unit
+      display: block
+      box-sizing: border-box
+      float: left
+      width: $soh_led_bar_24_ch-width
+      height: $soh_led_bar_24_ch-height
+      background-color: #000
+      border: 1px solid $soh_led_bar_24_ch-border-color
+    .led-unit-1
+    .led-unit-2
+    .led-unit-3
+    .led-unit-4
+    .led-unit-5
+    .led-unit-6
+    .led-unit-7
+    .led-unit-8

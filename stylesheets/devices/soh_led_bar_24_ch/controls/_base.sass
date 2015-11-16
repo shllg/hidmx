@@ -1,0 +1,21 @@
+$soh_led_bar_24_ch-width: 50px
+$soh_led_bar_24_ch-height: 20px
+$soh_led_bar_24_ch-border-color: lighten($background-color, 15%)
+
+.device-controls.soh_led_bar_24_ch
+  display: inline-block
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  .device-name
+    color: lighten($soh_led_bar_24_ch-border-color, 15%)
+  .soh_led_bar_24_ch-inside
+    +clearfix
+    +border-top-radius(2px)
+    +border-bottom-radius(2px)
+    display: block
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    border: 2px solid $soh_led_bar_24_ch-border-color
+    outline: none
