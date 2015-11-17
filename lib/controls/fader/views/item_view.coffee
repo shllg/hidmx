@@ -5,12 +5,18 @@ module.exports = class ControlsFaderView extends Marionette.ItemView
   model: require('../models/fader')
 
   ui:
-    slot: '.controls-fader-slot'
-    valve: '.controls-fader-valve'
+    slot:     '.controls-fader-slot'
+    valve:    '.controls-fader-valve'
+    display:  '.controls-fader-display'
+
+  modelEvents:
+    'change:value': 'onModelChangeValue'
 
   onBeforeRender: =>
 
   onRender: =>
+    @ui.display.text(@model.get('value'))
+
     y = 0
     @ui.valve[0].setAttribute('data-y', y)
     @ui.valve[0].style.webkitTransform  = "translateY(#{y}px)"
@@ -29,28 +35,16 @@ module.exports = class ControlsFaderView extends Marionette.ItemView
         y = (parseFloat(@ui.valve[0].getAttribute('data-y')) || 0) + event.dy
         y = 0 if y > 0
         y = height if y < height
-        # y = y * -1
 
         @ui.valve[0].style.webkitTransform  = "translateY(#{y}px)"
         @ui.valve[0].style.transform        = "translateY(#{y}px)"
 
         @ui.valve[0].setAttribute('data-y', y)
 
-      # onmove: (event) =>
-
-      #   @_currentTop += event.dy
-      #   @_currentTop = 0 if @_currentTop < 0
-      #   @_currentTop =
-
-
-      #   offset      =
-      #   height      = @.$el.height()
-      #   currentTop  = @ui.valve.position().top / height
-      #   dragTop     = event.dy / height
-
-      #   console.log @ui.valve.position().top
-      #   console.log 'ONMOVE', currentTop, dragTop, currentTop + dragTop
-
+        @model.set 'value', parseInt(255 * y / height)
 
     })
+
+  onModelChangeValue: =>
+    @ui.display.text(@model.get('value'))
 

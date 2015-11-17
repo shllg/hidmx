@@ -1,0 +1,42 @@
+$controls-poti-display-width: 31px
+$controls-poti-display-height: 30px
+
+$controls-poti-height: $controls-poti-display-height
+
+.controls-poti
+  position: relative
+  display: inline-block
+  width: 50px
+  height: $controls-poti-height
+  .controls-poti-unit
+    +position(absolute, auto auto auto auto)
+    +border-top-radius(15px)
+    +border-bottom-radius(15px)
+    +transform(rotateZ(0deg))
+    +background-image(radial-gradient(darken(#aaa, 15%), #aaa))
+    box-sizing: border-box
+    width: 30px
+    height: 30px
+    background-color: #ddd
+    cursor: pointer
+  .controls-poti-marker
+    +position(absolute, 12px auto auto 50%)
+    +transform(rotateZ(40deg))
+    +background-image(linear-gradient(hsla(183,70%,70%,1) 0%, hsla(183,50%,50%,1) 100%) top)
+    width: 4px
+    height: 19px
+    margin-left: -8px
+  .controls-poti-limit-dot-left
+  .controls-poti-limit-dot-right
+  .controls-poti-display
+    +position(absolute, 100px auto auto auto)
+    +border-top-radius(2px)
+    +border-bottom-radius(2px)
+    width: $controls-poti-display-width
+    height: $controls-poti-display-height
+    line-height: $controls-poti-display-height
+    font-size: 1em
+    text-align: center
+    color: hsla(183,100%,95%,1)
+    background-color: hsla(183,50%,50%,1)
+    box-shadow: inset 0 0 5px rgba(255,255,255,0.5)

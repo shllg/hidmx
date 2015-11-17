@@ -55,7 +55,15 @@ $('body').append(ledControlView.$el)
 
 FaderControl      = require('./controls/fader/models/fader')
 FaderControlView  = require('./controls/fader/views/item_view')
-view = new FaderControlView({ model: new FaderControl() })
+model = new FaderControl()
+view = new FaderControlView({ model: model })
+view.render()
+$('body').append(view.$el)
+
+PotiControl      = require('./controls/poti/models/poti')
+PotiControlView  = require('./controls/poti/views/item_view')
+model = new PotiControl()
+view = new PotiControlView({ model: model })
 view.render()
 $('body').append(view.$el)
 
