@@ -1,8 +1,7 @@
-$soh_led_bar_24_ch-width: 50px
-$soh_led_bar_24_ch-height: 20px
 $soh_led_bar_24_ch-border-color: lighten($background-color, 15%)
 
 .device-controls.soh_led_bar_24_ch
+  position: relative
   display: inline-block
   box-sizing: border-box
   margin: 0
@@ -13,9 +12,66 @@ $soh_led_bar_24_ch-border-color: lighten($background-color, 15%)
     +clearfix
     +border-top-radius(2px)
     +border-bottom-radius(2px)
+    position: relative
     display: block
     box-sizing: border-box
+    width: 450px
+    height: 350px
     margin: 0
     padding: 0
     border: 2px solid $soh_led_bar_24_ch-border-color
     outline: none
+
+  .fader-1, .fader-2, .fader-3,
+  .poti-1, .poti-2, .poti-3,
+  .button-1, .button-2, .button-3,
+  .button-4, .button-5, .button-6,
+  .button-7, .button-8, .button-9
+    position: absolute
+    display: block
+
+  $controls-fader-top: 70px
+  $controls-fader-left: 80px
+
+  $controls-poti-top: 30px
+  $controls-poti-left: 80px
+
+  $controls-button-top-1: 130px
+  $controls-button-top-2: 180px
+  $controls-button-top-3: 230px
+  $controls-button-left: 35px
+
+  $controls-space: 130px
+
+  .fader-1, .fader-2, .fader-3
+    top: $controls-fader-top
+  .poti-1, .poti-2,.poti-3
+    top: $controls-poti-top
+  .button-1, .button-4, .button-7
+    top: $controls-button-top-1
+  .button-2, .button-5, .button-8
+    top: $controls-button-top-2
+  .button-3, .button-6, .button-9
+    top: $controls-button-top-3
+
+  .fader-1
+    left: $controls-fader-left + 0 * $controls-space
+  .fader-2
+    left: $controls-fader-left + 1 * $controls-space
+  .fader-3
+    left: $controls-fader-left + 2 * $controls-space
+
+  .poti-1
+    left: $controls-poti-left + 0 * $controls-space
+  .poti-2
+    left: $controls-poti-left + 1 * $controls-space
+  .poti-3
+    left: $controls-poti-left + 2 * $controls-space
+
+  .button-1, .button-2, .button-3
+    left: $controls-button-left + 0 * $controls-space
+  .button-4, .button-5, .button-6
+    left: $controls-button-left + 1 * $controls-space
+  .button-7, .button-8, .button-9
+    left: $controls-button-left + 2 * $controls-space
+

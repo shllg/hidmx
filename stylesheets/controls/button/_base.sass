@@ -1,0 +1,27 @@
+.controls-button,
+.controls-button-inner
+  +border-top-radius(2px)
+  +border-bottom-radius(2px)
+  +user-select(none)
+  position: relative
+
+.controls-button
+  display: inline-block
+  width: 30px
+  height: 30px
+  border: 1px solid #rgba(30,0,0, 0.8)
+  background-color: rgb(130,0,0)
+  box-shadow: 0 0 3px 0px rgba(#000, 0.8)
+  cursor: pointer
+  .controls-button-inner
+    display: block
+    width: 24px
+    height: 24px
+    margin: 3px 0 0 3px
+    background-color: rgb(90,0,0)
+  &.active
+    background-color: rgb(255,0,0)
+    .controls-button-inner
+      background-color: rgb(160,0,0)
+  &.mousedown
+    box-shadow: 0 0 5px 1px rgba(#000, 0.8)

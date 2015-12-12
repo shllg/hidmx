@@ -1,0 +1,1 @@
+module.exports = class AbstractModel extends Backbone.Model

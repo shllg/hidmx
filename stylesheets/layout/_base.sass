@@ -2,6 +2,50 @@ html,
 body
   margin: 0
   padding: 0
+  font-family: Roboto
+  font-size: 12px
 
 body
   background-color: $background-color
+
+#tabs-nav
+  +position(absolute, 0 0 auto 0)
+  height: $tab-bar-height
+  background-color: lighten($background-color, 10%)
+
+#tabs-container
+  +position(absolute, $tab-bar-height 0 0 0)
+  .tab
+    +position(absolute, 0 0 0 0)
+    display: none
+    &.tab-active
+      display: block
+
+// ----------------------------------------------------------------------
+
+#tabs-nav
+  ul, li, a
+    position: relative
+    display: block
+  ul
+    +clearfix
+    margin: 4px 4px 0 4px
+    padding: 0
+    list-style: none
+  li
+    float: left
+  a
+    +border-top-radius(3px)
+    padding: 16px
+    font-family: Roboto-Light
+    font-size: 12px
+    line-height: 14px
+    text-decoration: none
+    color: #d0d0d0
+    &:hover
+      color: $color-primary
+      background-color: lighten($background-color, 5%)
+    &.tab-active
+      cursor: default
+      color: $color-primary
+      background-color: $background-color

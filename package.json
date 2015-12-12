@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "main": "./lib/run.js",
   "dependencies": {
+    "app-module-path": "^1.0.4",
     "artnet": "^1.0.1",
     "async": "0.2.6",
     "backbone": "1.2.3",
@@ -30,6 +31,7 @@
     "lodash": "^3.10.1",
     "midi": ">=0.9.4",
     "minimatch": "~2.0.10",
+    "node-core-audio": "git+https://github.com/ZECTBynmo/node-core-audio.git",
     "node-sass": "^3.4.2",
     "nopt": "~3.0.3",
     "q": "^1.4.1",
